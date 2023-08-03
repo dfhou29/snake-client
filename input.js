@@ -6,7 +6,6 @@ const setUpInput = (conn) => {
   stdin.resume();
   stdin.on('data', handleUserInput);
   connection = conn;
-  console.log('connection:', connection);
   return stdin;
 }
 const handleUserInput = (data) => {
@@ -26,6 +25,10 @@ const handleUserInput = (data) => {
     case 'd':
       console.log("Move right");
       connection.write("Move: right");
+      break;
+    case 'g':
+      console.log("Move right");
+      connection.write("Say: sss~");
       break;
     case '\u0003':
       console.log("Exit.");
