@@ -1,3 +1,4 @@
+const {UP, LEFT, DOWN, RIGHT, MESSAGE, EXIT} = require('./constants')
 let connection;
 const setUpInput = (conn) => {
   const stdin = process.stdin;
@@ -11,27 +12,27 @@ const setUpInput = (conn) => {
 const handleUserInput = (data) => {
   switch (data) {
     case 'w':
-      console.log("Move Up");
-      connection.write("Move: up");
+      console.log(UP);
+      connection.write(UP);
       break;
     case 'a':
-      console.log("Move left");
-      connection.write("Move: left");
+      console.log(LEFT);
+      connection.write(LEFT);
       break;
     case 's':
-      console.log("Move down");
-      connection.write("Move: down");
+      console.log(DOWN);
+      connection.write(DOWN);
       break;
     case 'd':
-      console.log("Move right");
-      connection.write("Move: right");
+      console.log(RIGHT);
+      connection.write(RIGHT);
       break;
     case 'g':
-      console.log("Move right");
-      connection.write("Say: sss~");
+      console.log(MESSAGE);
+      connection.write(MESSAGE);
       break;
     case '\u0003':
-      console.log("Exit.");
+      console.log(EXIT);
       process.exit();
       break;
   }
